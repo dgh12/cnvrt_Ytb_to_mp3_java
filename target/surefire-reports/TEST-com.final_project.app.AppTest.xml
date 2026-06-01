@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.final_project.app.AppTest" time="178.249" tests="3" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="25"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project/target/test-classes:/home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project/target/classes:/home/dheddin/.m2/repository/com/github/felipeucelli/JavaTube/-352e15fb24-1/JavaTube--352e15fb24-1.jar:/home/dheddin/.m2/repository/org/json/json/20231013/json-20231013.jar:/home/dheddin/.m2/repository/com/github/felipeucelli/nodejs_wrapper/d14de15910/nodejs_wrapper-d14de15910.jar:/home/dheddin/.m2/repository/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar:/home/dheddin/.m2/repository/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0.jar:/home/dheddin/.m2/repository/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar:/home/dheddin/.m2/repository/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar:/home/dheddin/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/home/dheddin/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/home/dheddin/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/home/dheddin/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar:/home/dheddin/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/home/dheddin/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/home/dheddin/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/home/dheddin/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/home/dheddin/.m2/repository/com/github/kinsleykajiva/ffmpeg-with-java/-83a6bfd8bd-1/ffmpeg-with-java--83a6bfd8bd-1.jar:/home/dheddin/.m2/repository/com/github/kinsleykajiva/ffmpeg-with-java/ffmpeg-with-java/-83a6bfd8bd-1/ffmpeg-with-java--83a6bfd8bd-1.jar:/home/dheddin/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/dheddin/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/dheddin/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar:/home/dheddin/.m2/repository/com/github/kinsleykajiva/ffmpeg-with-java/ffmpeg-with-java-demo-app/-83a6bfd8bd-1/ffmpeg-with-java-demo-app--83a6bfd8bd-1.jar:/home/dheddin/.m2/repository/com/github/douglascrockford/JSON-java/20260522/JSON-java-20260522.jar:/home/dheddin/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar:/home/dheddin/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/dheddin/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar:/home/dheddin/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/dheddin/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-25-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project/target/surefire/surefirebooter-20260601154454014_3.jar /home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project/target/surefire 2026-06-01T15-44-53_876-jvmRun1 surefire-20260601154454014_1tmp surefire_0-20260601154454014_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project/target/test-classes:/home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project/target/classes:/home/dheddin/.m2/repository/com/github/felipeucelli/JavaTube/-352e15fb24-1/JavaTube--352e15fb24-1.jar:/home/dheddin/.m2/repository/org/json/json/20231013/json-20231013.jar:/home/dheddin/.m2/repository/com/github/felipeucelli/nodejs_wrapper/d14de15910/nodejs_wrapper-d14de15910.jar:/home/dheddin/.m2/repository/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar:/home/dheddin/.m2/repository/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0.jar:/home/dheddin/.m2/repository/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar:/home/dheddin/.m2/repository/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar:/home/dheddin/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/home/dheddin/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/home/dheddin/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/home/dheddin/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar:/home/dheddin/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/home/dheddin/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/home/dheddin/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/home/dheddin/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/home/dheddin/.m2/repository/com/github/kinsleykajiva/ffmpeg-with-java/-83a6bfd8bd-1/ffmpeg-with-java--83a6bfd8bd-1.jar:/home/dheddin/.m2/repository/com/github/kinsleykajiva/ffmpeg-with-java/ffmpeg-with-java/-83a6bfd8bd-1/ffmpeg-with-java--83a6bfd8bd-1.jar:/home/dheddin/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/dheddin/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/dheddin/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar:/home/dheddin/.m2/repository/com/github/kinsleykajiva/ffmpeg-with-java/ffmpeg-with-java-demo-app/-83a6bfd8bd-1/ffmpeg-with-java-demo-app--83a6bfd8bd-1.jar:/home/dheddin/.m2/repository/com/github/douglascrockford/JSON-java/20260522/JSON-java-20260522.jar:/home/dheddin/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar:/home/dheddin/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/dheddin/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar:/home/dheddin/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/dheddin/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/dheddin"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.home" value="/usr/lib/jvm/java-25-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project/target/surefire/surefirebooter-20260601154454014_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="25.0.2+10-Ubuntu-122.04"/>
+    <property name="user.name" value="dheddin"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.17.9-76061709-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/dheddin/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-25"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="25.0.2"/>
+    <property name="user.dir" value="/home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="25.0.2+10-Ubuntu-122.04"/>
+    <property name="stdin.encoding" value="UTF-8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="69.0"/>
+  </properties>
+  <testcase name="test_download" classname="com.final_project.app.AppTest" time="0.869">
+    <system-out><![CDATA[Along the Road to Gundagai
+-|#####################                       | 48.2%-|##########################################  | 96.5%-|############################################| 100.0%
+]]></system-out>
+  </testcase>
+  <testcase name="test_playlist" classname="com.final_project.app.AppTest" time="168.279">
+    <system-out><![CDATA[Bach   Violin Sonata no  1 in G minor BWV 1001   Sato   Netherlands Bach Society
+-|###                                         | 6.1%-|#####                                       | 12.3%-|########                                    | 18.4%-|###########                                 | 24.5%-|##############                              | 30.7%-|################                            | 36.8%-|###################                         | 43.0%-|######################                      | 49.1%-|########################                    | 55.2%-|###########################                 | 61.4%-|##############################              | 67.5%-|################################            | 73.6%-|###################################         | 79.8%-|######################################      | 85.9%-|#########################################   | 92.0%-|########################################### | 98.2%-|############################################| 100.0%
+
+Bach   Violin Partita no  1 in B minor BWV 1002   Sato   Netherlands Bach Society
+-|##                                          | 3.8%-|###                                         | 7.6%-|#####                                       | 11.4%-|#######                                     | 15.1%-|########                                    | 18.9%-|##########                                  | 22.7%-|############                                | 26.5%-|#############                               | 30.3%-|###############                             | 34.1%-|#################                           | 37.8%-|##################                          | 41.6%-|####################                        | 45.4%-|######################                      | 49.2%-|#######################                     | 53.0%-|#########################                   | 56.8%-|###########################                 | 60.5%-|############################                | 64.3%-|##############################              | 68.1%-|################################            | 71.9%-|#################################           | 75.7%-|###################################         | 79.5%-|#####################################       | 83.2%-|######################################      | 87.0%-|########################################    | 90.8%-|##########################################  | 94.6%-|########################################### | 98.4%-|############################################| 100.0%
+
+Bach   Violin Sonata no  2 in A minor BWV 1003   Sato   Netherlands Bach Society
+-|##                                          | 4.4%-|####                                        | 8.8%-|######                                      | 13.2%-|########                                    | 17.6%-|##########                                  | 21.9%-|############                                | 26.3%-|##############                              | 30.7%-|###############                             | 35.1%-|#################                           | 39.5%-|###################                         | 43.9%-|#####################                       | 48.3%-|#######################                     | 52.7%-|#########################                   | 57.1%-|###########################                 | 61.5%-|#############################               | 65.8%-|###############################             | 70.2%-|#################################           | 74.6%-|###################################         | 79.0%-|#####################################       | 83.4%-|#######################################     | 87.8%-|#########################################   | 92.2%-|##########################################  | 96.6%-|############################################| 100.0%
+
+Bach   Violin Partita no  2 in D minor BWV 1004   Sato   Netherlands Bach Society
+-|##                                          | 3.7%-|###                                         | 7.4%-|#####                                       | 11.2%-|#######                                     | 14.9%-|########                                    | 18.6%-|##########                                  | 22.3%-|###########                                 | 26.0%-|#############                               | 29.8%-|###############                             | 33.5%-|################                            | 37.2%-|##################                          | 40.9%-|####################                        | 44.6%-|#####################                       | 48.3%-|#######################                     | 52.1%-|#########################                   | 55.8%-|##########################                  | 59.5%-|############################                | 63.2%-|#############################               | 66.9%-|###############################             | 70.7%-|#################################           | 74.4%-|##################################          | 78.1%-|####################################        | 81.8%-|######################################      | 85.5%-|#######################################     | 89.3%-|#########################################   | 93.0%-|########################################### | 96.7%-|############################################| 100.0%
+
+Bach   Violin Sonata no  3 in C major BWV 1005   Sato   Netherlands Bach Society
+-|##                                          | 4.4%-|####                                        | 8.8%-|######                                      | 13.3%-|########                                    | 17.7%-|##########                                  | 22.1%-|############                                | 26.5%-|##############                              | 31.0%-|################                            | 35.4%-|##################                          | 39.8%-|###################                         | 44.2%-|#####################                       | 48.7%-|#######################                     | 53.1%-|#########################                   | 57.5%-|###########################                 | 61.9%-|#############################               | 66.4%-|###############################             | 70.8%-|#################################           | 75.2%-|###################################         | 79.6%-|#####################################       | 84.0%-|#######################################     | 88.5%-|#########################################   | 92.9%-|########################################### | 97.3%-|############################################| 100.0%
+
+Bach   Violin Partita no  3 in E major BWV 1006   Sato   Netherlands Bach Society
+-|###                                         | 6.0%-|#####                                       | 12.1%-|########                                    | 18.1%-|###########                                 | 24.1%-|#############                               | 30.1%-|################                            | 36.2%-|###################                         | 42.2%-|#####################                       | 48.2%-|########################                    | 54.3%-|###########################                 | 60.3%-|#############################               | 66.3%-|################################            | 72.3%-|##################################          | 78.4%-|#####################################       | 84.4%-|########################################    | 90.4%-|##########################################  | 96.4%-|############################################| 100.0%
+
+Converting 'Bach   Violin Sonata no  1 in G minor BWV 1001   Sato   Netherlands Bach Society.mp4' to 'Bach   Violin Sonata no  1 in G minor BWV 1001   Sato   Netherlands Bach Society.mp3'
+ Output: Bach   Violin Sonata no  1 in G minor BWV 1001   Sato   Netherlands Bach Society.mp3
+ Size: 40.28 MB
+ Duration: 18113ms
+ Deleted original file.
+Converting 'Bach   Violin Partita no  1 in B minor BWV 1002   Sato   Netherlands Bach Society.mp4' to 'Bach   Violin Partita no  1 in B minor BWV 1002   Sato   Netherlands Bach Society.mp3'
+ Output: Bach   Violin Partita no  1 in B minor BWV 1002   Sato   Netherlands Bach Society.mp3
+ Size: 65.32 MB
+ Duration: 30164ms
+ Deleted original file.
+Converting 'Bach   Violin Sonata no  2 in A minor BWV 1003   Sato   Netherlands Bach Society.mp4' to 'Bach   Violin Sonata no  2 in A minor BWV 1003   Sato   Netherlands Bach Society.mp3'
+ Output: Bach   Violin Sonata no  2 in A minor BWV 1003   Sato   Netherlands Bach Society.mp3
+ Size: 56.31 MB
+ Duration: 24860ms
+ Deleted original file.
+Converting 'Bach   Violin Partita no  2 in D minor BWV 1004   Sato   Netherlands Bach Society.mp4' to 'Bach   Violin Partita no  2 in D minor BWV 1004   Sato   Netherlands Bach Society.mp3'
+ Output: Bach   Violin Partita no  2 in D minor BWV 1004   Sato   Netherlands Bach Society.mp3
+ Size: 66.46 MB
+ Duration: 30939ms
+ Deleted original file.
+Converting 'Bach   Violin Sonata no  3 in C major BWV 1005   Sato   Netherlands Bach Society.mp4' to 'Bach   Violin Sonata no  3 in C major BWV 1005   Sato   Netherlands Bach Society.mp3'
+ Output: Bach   Violin Sonata no  3 in C major BWV 1005   Sato   Netherlands Bach Society.mp3
+ Size: 55.87 MB
+ Duration: 26994ms
+ Deleted original file.
+Converting 'Bach   Violin Partita no  3 in E major BWV 1006   Sato   Netherlands Bach Society.mp4' to 'Bach   Violin Partita no  3 in E major BWV 1006   Sato   Netherlands Bach Society.mp3'
+ Output: Bach   Violin Partita no  3 in E major BWV 1006   Sato   Netherlands Bach Society.mp3
+ Size: 41.00 MB
+ Duration: 18494ms
+ Deleted original file.
+Input #0, concat, from 'merge.txt':
+  Duration: N/A, start: -0.023021, bitrate: 320 kb/s
+  Stream #0:0: Audio: mp3, 48000 Hz, stereo, fltp, 320 kb/s
+    Metadata:
+      encoder         : Lavc58.13
+Output #0, mp3, to 'Six sonatas and partitas for solo violin.mp3':
+  Metadata:
+    TSSE            : Lavf58.76.100
+  Stream #0:0: Audio: mp3, 48000 Hz, stereo, fltp, 320 kb/s
+    Metadata:
+      encoder         : Lavc58.13
+Stream mapping:
+  Stream #0:0 -> #0:0 (copy)
+Press [q] to stop, [?] for help
+size=       2kB time=00:00:00.00 bitrate=N/A speed=   0x    
+size=   69888kB time=00:29:49.12 bitrate= 320.0kbits/s speed=3.58e+03x    
+size=  112384kB time=00:47:57.84 bitrate= 319.9kbits/s speed=2.88e+03x    
+size=  155648kB time=01:06:30.62 bitrate= 319.5kbits/s speed=2.66e+03x    
+size=  170752kB time=01:12:51.24 bitrate= 320.0kbits/s speed=1.91e+03x    
+size=  225280kB time=01:36:07.27 bitrate= 320.0kbits/s speed=2.07e+03x    
+size=  228096kB time=01:37:19.24 bitrate= 320.0kbits/s speed=1.38e+03x    
+size=  243456kB time=01:43:52.46 bitrate= 320.0kbits/s speed= 961x    
+size=  256000kB time=01:49:13.58 bitrate= 320.0kbits/s speed= 914x    
+size=  302336kB time=02:09:04.51 bitrate= 319.8kbits/s speed=1.01e+03x    
+size=  333049kB time=02:22:06.00 bitrate= 320.0kbits/s speed=1.07e+03x    
+video:0kB audio:333048kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000295%
+waited
+0
+added file
+check
+]]></system-out>
+  </testcase>
+  <testcase name="test_conversion" classname="com.final_project.app.AppTest" time="9.069">
+    <system-out><![CDATA[Converting 'Along the Road to Gundagai.mp4' to 'Along the Road to Gundagai.mp3'
+ Output: Along the Road to Gundagai.mp3
+ Size: 5.12 MB
+ Duration: 2767ms
+ Deleted original file.
+Converting 'Along the Road to Gundagai.mp4' to 'Along the Road to Gundagai.m4a'
+ Output: Along the Road to Gundagai.m4a
+ Size: 4.09 MB
+ Duration: 5314ms
+ Deleted original file.
+Converting 'Along the Road to Gundagai.mp4' to 'Along the Road to Gundagai.wav'
+ Output: Along the Road to Gundagai.wav
+ Size: 24.58 MB
+ Duration: 397ms
+ Deleted original file.
+Converting 'Along the Road to Gundagai.mp4' to 'Along the Road to Gundagai.wav'
+ Output: Along the Road to Gundagai.wav
+ Size: 24.58 MB
+ Duration: 225ms
+ Deleted original file.
+]]></system-out>
+  </testcase>
+</testsuite>
