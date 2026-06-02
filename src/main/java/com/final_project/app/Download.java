@@ -27,7 +27,7 @@ public class Download {
     private AudioCodec codec_type;
     private boolean download_as_playlist;
     private boolean test = false;
-    private boolean delete = false;
+    private boolean delete;
     private String title;
     private ArrayList<String> files = new ArrayList<>();
     
@@ -63,7 +63,7 @@ public class Download {
         file_types.put("m4a", AudioCodec.AAC);//acc
         file_types.put("flac", AudioCodec.FLAC);//flac
         file_types.put("pcm_s16le", AudioCodec.PCM_S16LE);//wav
-        file_types.put("pcm_u8", AudioCodec.PCM_S16LE);//wav
+        file_types.put("pcm_u8", AudioCodec.PCM_U8);//wav
         for (var key : file_types.keySet()) {
             if (key.equals(file_type)) {
                 return file_types.get(key);
@@ -92,7 +92,7 @@ public class Download {
             Youtube yt = new Youtube(this.url);
             String file_name = sanitize(yt.getTitle());
             System.out.println(file_name);
-            yt.streams().getOnlyAudio().download(file_name);
+            yt.streams().getOnlyAudio().download("./", file_name);
             System.out.println();
             this.files.add(file_name);
             return true;
@@ -110,7 +110,7 @@ public class Download {
                 Youtube yt = new Youtube(url);
                 String file_name = sanitize(yt.getTitle());
                 System.out.println(file_name);
-                yt.streams().getOnlyAudio().download(file_name);
+                yt.streams().getOnlyAudio().download("./", file_name);
                 this.files.add(file_name);
                 System.out.println("\n");
             }
