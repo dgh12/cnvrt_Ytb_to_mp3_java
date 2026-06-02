@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.final_project.app.AppTest" time="178.249" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.final_project.app.AppTest" time="180.865" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-25-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project/target/surefire/surefirebooter-20260601154454014_3.jar /home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project/target/surefire 2026-06-01T15-44-53_876-jvmRun1 surefire-20260601154454014_1tmp surefire_0-20260601154454014_2tmp"/>
+    <property name="sun.java.command" value="/home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project/target/surefire/surefirebooter-20260601161222066_3.jar /home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project/target/surefire 2026-06-01T16-12-21_947-jvmRun1 surefire-20260601161222066_1tmp surefire_0-20260601161222066_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project/target/test-classes:/home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project/target/classes:/home/dheddin/.m2/repository/com/github/felipeucelli/JavaTube/-352e15fb24-1/JavaTube--352e15fb24-1.jar:/home/dheddin/.m2/repository/org/json/json/20231013/json-20231013.jar:/home/dheddin/.m2/repository/com/github/felipeucelli/nodejs_wrapper/d14de15910/nodejs_wrapper-d14de15910.jar:/home/dheddin/.m2/repository/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar:/home/dheddin/.m2/repository/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0.jar:/home/dheddin/.m2/repository/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar:/home/dheddin/.m2/repository/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar:/home/dheddin/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/home/dheddin/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/home/dheddin/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/home/dheddin/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar:/home/dheddin/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/home/dheddin/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/home/dheddin/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar:/home/dheddin/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/home/dheddin/.m2/repository/com/github/kinsleykajiva/ffmpeg-with-java/-83a6bfd8bd-1/ffmpeg-with-java--83a6bfd8bd-1.jar:/home/dheddin/.m2/repository/com/github/kinsleykajiva/ffmpeg-with-java/ffmpeg-with-java/-83a6bfd8bd-1/ffmpeg-with-java--83a6bfd8bd-1.jar:/home/dheddin/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/dheddin/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/dheddin/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar:/home/dheddin/.m2/repository/com/github/kinsleykajiva/ffmpeg-with-java/ffmpeg-with-java-demo-app/-83a6bfd8bd-1/ffmpeg-with-java-demo-app--83a6bfd8bd-1.jar:/home/dheddin/.m2/repository/com/github/douglascrockford/JSON-java/20260522/JSON-java-20260522.jar:/home/dheddin/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar:/home/dheddin/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/dheddin/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar:/home/dheddin/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/dheddin/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project/target/surefire/surefirebooter-20260601154454014_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/dheddin/projects/Sophia/Introduction_to_Java_Programming/sophia_final_project/target/surefire/surefirebooter-20260601161222066_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25.0.2+10-Ubuntu-122.04"/>
     <property name="user.name" value="dheddin"/>
@@ -54,12 +54,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="test_download" classname="com.final_project.app.AppTest" time="0.869">
+  <testcase name="test_download" classname="com.final_project.app.AppTest" time="0.871">
     <system-out><![CDATA[Along the Road to Gundagai
 -|#####################                       | 48.2%-|##########################################  | 96.5%-|############################################| 100.0%
 ]]></system-out>
   </testcase>
-  <testcase name="test_playlist" classname="com.final_project.app.AppTest" time="168.279">
+  <testcase name="test_playlist" classname="com.final_project.app.AppTest" time="171.245">
     <system-out><![CDATA[Bach   Violin Sonata no  1 in G minor BWV 1001   Sato   Netherlands Bach Society
 -|###                                         | 6.1%-|#####                                       | 12.3%-|########                                    | 18.4%-|###########                                 | 24.5%-|##############                              | 30.7%-|################                            | 36.8%-|###################                         | 43.0%-|######################                      | 49.1%-|########################                    | 55.2%-|###########################                 | 61.4%-|##############################              | 67.5%-|################################            | 73.6%-|###################################         | 79.8%-|######################################      | 85.9%-|#########################################   | 92.0%-|########################################### | 98.2%-|############################################| 100.0%
 
@@ -81,32 +81,32 @@ Bach   Violin Partita no  3 in E major BWV 1006   Sato   Netherlands Bach Societ
 Converting 'Bach   Violin Sonata no  1 in G minor BWV 1001   Sato   Netherlands Bach Society.mp4' to 'Bach   Violin Sonata no  1 in G minor BWV 1001   Sato   Netherlands Bach Society.mp3'
  Output: Bach   Violin Sonata no  1 in G minor BWV 1001   Sato   Netherlands Bach Society.mp3
  Size: 40.28 MB
- Duration: 18113ms
+ Duration: 18360ms
  Deleted original file.
 Converting 'Bach   Violin Partita no  1 in B minor BWV 1002   Sato   Netherlands Bach Society.mp4' to 'Bach   Violin Partita no  1 in B minor BWV 1002   Sato   Netherlands Bach Society.mp3'
  Output: Bach   Violin Partita no  1 in B minor BWV 1002   Sato   Netherlands Bach Society.mp3
  Size: 65.32 MB
- Duration: 30164ms
+ Duration: 29037ms
  Deleted original file.
 Converting 'Bach   Violin Sonata no  2 in A minor BWV 1003   Sato   Netherlands Bach Society.mp4' to 'Bach   Violin Sonata no  2 in A minor BWV 1003   Sato   Netherlands Bach Society.mp3'
  Output: Bach   Violin Sonata no  2 in A minor BWV 1003   Sato   Netherlands Bach Society.mp3
  Size: 56.31 MB
- Duration: 24860ms
+ Duration: 25485ms
  Deleted original file.
 Converting 'Bach   Violin Partita no  2 in D minor BWV 1004   Sato   Netherlands Bach Society.mp4' to 'Bach   Violin Partita no  2 in D minor BWV 1004   Sato   Netherlands Bach Society.mp3'
  Output: Bach   Violin Partita no  2 in D minor BWV 1004   Sato   Netherlands Bach Society.mp3
  Size: 66.46 MB
- Duration: 30939ms
+ Duration: 29852ms
  Deleted original file.
 Converting 'Bach   Violin Sonata no  3 in C major BWV 1005   Sato   Netherlands Bach Society.mp4' to 'Bach   Violin Sonata no  3 in C major BWV 1005   Sato   Netherlands Bach Society.mp3'
  Output: Bach   Violin Sonata no  3 in C major BWV 1005   Sato   Netherlands Bach Society.mp3
  Size: 55.87 MB
- Duration: 26994ms
+ Duration: 25258ms
  Deleted original file.
 Converting 'Bach   Violin Partita no  3 in E major BWV 1006   Sato   Netherlands Bach Society.mp4' to 'Bach   Violin Partita no  3 in E major BWV 1006   Sato   Netherlands Bach Society.mp3'
  Output: Bach   Violin Partita no  3 in E major BWV 1006   Sato   Netherlands Bach Society.mp3
  Size: 41.00 MB
- Duration: 18494ms
+ Duration: 18659ms
  Deleted original file.
 Input #0, concat, from 'merge.txt':
   Duration: N/A, start: -0.023021, bitrate: 320 kb/s
@@ -122,17 +122,27 @@ Output #0, mp3, to 'Six sonatas and partitas for solo violin.mp3':
 Stream mapping:
   Stream #0:0 -> #0:0 (copy)
 Press [q] to stop, [?] for help
-size=       2kB time=00:00:00.00 bitrate=N/A speed=   0x    
-size=   69888kB time=00:29:49.12 bitrate= 320.0kbits/s speed=3.58e+03x    
-size=  112384kB time=00:47:57.84 bitrate= 319.9kbits/s speed=2.88e+03x    
-size=  155648kB time=01:06:30.62 bitrate= 319.5kbits/s speed=2.66e+03x    
-size=  170752kB time=01:12:51.24 bitrate= 320.0kbits/s speed=1.91e+03x    
-size=  225280kB time=01:36:07.27 bitrate= 320.0kbits/s speed=2.07e+03x    
-size=  228096kB time=01:37:19.24 bitrate= 320.0kbits/s speed=1.38e+03x    
-size=  243456kB time=01:43:52.46 bitrate= 320.0kbits/s speed= 961x    
-size=  256000kB time=01:49:13.58 bitrate= 320.0kbits/s speed= 914x    
-size=  302336kB time=02:09:04.51 bitrate= 319.8kbits/s speed=1.01e+03x    
-size=  333049kB time=02:22:06.00 bitrate= 320.0kbits/s speed=1.07e+03x    
+size=       2kB time=00:00:00.00 bitrate=N/A speed=N/A    
+size=   44544kB time=00:19:00.31 bitrate= 320.0kbits/s speed=2.25e+03x    
+size=   61184kB time=00:26:06.28 bitrate= 320.0kbits/s speed=1.54e+03x    
+size=   70912kB time=00:30:15.33 bitrate= 320.0kbits/s speed=1.2e+03x    
+size=   76032kB time=00:32:26.40 bitrate= 320.0kbits/s speed= 926x    
+size=   82944kB time=00:35:24.43 bitrate= 319.8kbits/s speed= 817x    
+size=  113152kB time=00:48:16.68 bitrate= 320.0kbits/s speed= 933x    
+size=  139264kB time=00:59:25.15 bitrate= 320.0kbits/s speed= 986x    
+size=  146688kB time=01:02:35.20 bitrate= 320.0kbits/s speed= 912x    
+size=  186368kB time=01:19:31.00 bitrate= 320.0kbits/s speed=1.03e+03x    
+size=  209152kB time=01:29:14.28 bitrate= 320.0kbits/s speed=1.04e+03x    
+size=  221696kB time=01:34:36.72 bitrate= 319.9kbits/s speed=1.01e+03x    
+size=  227072kB time=01:36:56.40 bitrate= 319.8kbits/s speed= 949x    
+size=  234752kB time=01:40:14.32 bitrate= 319.8kbits/s speed= 907x    
+size=  235264kB time=01:40:25.80 bitrate= 319.8kbits/s speed= 835x    
+size=  235264kB time=01:40:27.43 bitrate= 319.8kbits/s speed= 763x    
+size=  243456kB time=01:43:55.51 bitrate= 319.8kbits/s speed= 709x    
+size=  243456kB time=01:43:57.14 bitrate= 319.8kbits/s speed= 656x    
+size=  255232kB time=01:48:59.56 bitrate= 319.7kbits/s speed= 654x    
+size=  302336kB time=02:09:05.44 bitrate= 319.8kbits/s speed= 737x    
+size=  333049kB time=02:22:06.00 bitrate= 320.0kbits/s speed= 791x    
 video:0kB audio:333048kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000295%
 waited
 0
@@ -140,26 +150,26 @@ added file
 check
 ]]></system-out>
   </testcase>
-  <testcase name="test_conversion" classname="com.final_project.app.AppTest" time="9.069">
+  <testcase name="test_conversion" classname="com.final_project.app.AppTest" time="8.72">
     <system-out><![CDATA[Converting 'Along the Road to Gundagai.mp4' to 'Along the Road to Gundagai.mp3'
  Output: Along the Road to Gundagai.mp3
  Size: 5.12 MB
- Duration: 2767ms
+ Duration: 1641ms
  Deleted original file.
 Converting 'Along the Road to Gundagai.mp4' to 'Along the Road to Gundagai.m4a'
  Output: Along the Road to Gundagai.m4a
  Size: 4.09 MB
- Duration: 5314ms
+ Duration: 6349ms
  Deleted original file.
 Converting 'Along the Road to Gundagai.mp4' to 'Along the Road to Gundagai.wav'
  Output: Along the Road to Gundagai.wav
  Size: 24.58 MB
- Duration: 397ms
+ Duration: 183ms
  Deleted original file.
 Converting 'Along the Road to Gundagai.mp4' to 'Along the Road to Gundagai.wav'
  Output: Along the Road to Gundagai.wav
  Size: 24.58 MB
- Duration: 225ms
+ Duration: 242ms
  Deleted original file.
 ]]></system-out>
   </testcase>

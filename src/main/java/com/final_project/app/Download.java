@@ -26,14 +26,14 @@ public class Download {
     private String file_path;
     private AudioCodec codec_type;
     private String file_type;
-    private Boolean download_as_playlist;
+    private boolean download_as_playlist;
     private boolean test = false;
-    private Boolean delete = false;
+    private boolean delete = false;
     private String title;
     private ArrayList<String> files = new ArrayList<>();
     
     public Download (String url, String file_path,
-        Boolean download_as_playlist, String file_type, Boolean delete) {
+        boolean download_as_playlist, String file_type, boolean delete) {
             this.url = url;
             this.file_path = file_path;
             this.download_as_playlist = download_as_playlist;
@@ -43,7 +43,7 @@ public class Download {
         }
     
     public Download (String url, String file_path,
-                    String file_type, Boolean download_as_playlist, boolean test) {
+                    String file_type, boolean download_as_playlist, boolean test) {
             this.url = url;
             this.file_path = file_path;
             this.download_as_playlist = download_as_playlist;
@@ -68,7 +68,7 @@ public class Download {
         file_types.put("pcm_s16le", AudioCodec.PCM_S16LE);//wav
         file_types.put("pcm_u8", AudioCodec.PCM_S16LE);//wav
         for (var key : file_types.keySet()) {
-            if (key == file_type) {
+            if (key.equals(file_types)) {
                 return file_types.get(key);
             }
         }
@@ -76,7 +76,7 @@ public class Download {
     }
 
     private String translate_file_type(String file_type) {
-        if (file_type == "pcm_s16le" || file_type == "pcm_u8") {
+        if (file_type.equals("pcm_s16le") || file_type.equals("pcm_u8")) {
             return "wav";
         }
         return file_type;
@@ -214,14 +214,15 @@ public class Download {
             int exitCode = FFmpeg_process.waitFor();
             System.out.println("waited");
             System.out.println(exitCode);
-            if (!this.test || this.delete) {
-                for (String file : files) {
-                    File to_delete = new File(file + "." + this.file_type);
-                    Files.delete(to_delete.toPath());
-                }
-            }
+
             if (exitCode == 0) {
                 System.out.println("added file");
+                if (!this.test || this.delete) {
+                    for (String file : files) {
+                        File to_delete = new File(file + "." + this.file_type);
+                        Files.delete(to_delete.toPath());
+                    }
+                }
                 return true;
             } else {
                 System.err.println("FFmpeg exited with an error code of: " + exitCode);

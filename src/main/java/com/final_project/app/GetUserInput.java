@@ -70,11 +70,7 @@ public class GetUserInput {
             download_as_playlist = "N";
         }
         this.setDownload_as_playlist(download_as_playlist.toLowerCase().equals("y"));
-        String file_path = "";
-        if (file_path.equals("")) {
-            file_path = "./";
-        }
-        this.setFile_path(file_path);
+        this.setFile_path("./");
         if (this.getDownload_as_playlist()) {
             System.out.print("Do you want to merge the playlist videos into one: [Y/n]");
             String merge = input.nextLine();

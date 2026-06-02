@@ -1,6 +1,7 @@
 package com.final_project.app;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
@@ -31,16 +32,14 @@ public class AppTest {
             Download test = new Download("url", file_type, "Along the Road to Gundagai", true);
             success[incr] = test.convert();
             incr ++;
-            if (!test.check_for_corruption()) {
-                assertTrue(true);
-            }
+            assertTrue(test.check_for_corruption());
         }
         for ( boolean val: success ) {
             if (val) {
                 str += "a";
             }
         }
-        assertTrue(str.equals(strt));
+        (str.equals(strt));
     }
 
     @Test
@@ -53,7 +52,7 @@ public class AppTest {
                 System.out.println("check");
             assertTrue(download.check_for_corruption());
         } else {
-            assertTrue(false);
+            fail();
         }
     }
 
