@@ -18,7 +18,7 @@ public class AppTest {
     @Test
     public void test_download() {
         Download download = new Download("https://www.youtube.com/watch?v=jHZrrV5m6dI", 
-                                         "mp3", false, true);
+                                         "mp3", false);
         assertTrue(download.download());
     }
 
@@ -30,7 +30,7 @@ public class AppTest {
         String str = "";
         String strt = "aaaa";
         for (String file_type : file_types) {
-            Download test = new Download("url", file_type, "Along the Road to Gundagai", true);
+            Download test = new Download("url", file_type, "Along the Road to Gundagai");
             success[incr] = test.convert();
             incr ++;
             assertTrue(test.check_for_corruption());
@@ -46,7 +46,7 @@ public class AppTest {
     @Test
     public void test_playlist() {
         Download download = new Download("https://www.youtube.com/watch?v=MRKy3kX8XUM&list=PLecKPCyj4yRP8P_v2XXxP85CGaXxs4LWw",
-                                         "mp3", true, true);
+                                         "mp3", true);
         if (download.download() &&
                download.convert() &&
                download.merge()) {

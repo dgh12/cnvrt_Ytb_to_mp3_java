@@ -40,14 +40,14 @@ public class Download {
         }
     
     public Download (String url,
-                    String file_type, boolean download_as_playlist, boolean test) {
+                    String file_type, boolean download_as_playlist) {
             this.url = url;
             this.download_as_playlist = download_as_playlist;
             this.codec_type = translate_codec_type(file_type);
             this.file_type = translate_file_type(file_type);
         }
     
-    public Download (String url, String file_type, String file, boolean test) {
+    public Download (String url, String file_type, String file) {
         this.url = url;
         this.files.add(file);
         this.file_type = translate_file_type(file_type);
