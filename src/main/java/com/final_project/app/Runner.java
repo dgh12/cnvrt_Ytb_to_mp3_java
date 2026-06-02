@@ -7,12 +7,11 @@ public class Runner {
         input.getUserInput();
         String url = input.getUrl();
         Boolean download_as_playlist = input.getDownload_as_playlist();
-        String file_path = input.getFile_path();
         String file_type = input.getFile_type();
         Boolean delete = input.getDelete();
-        String merge = input.getMerge();
+        boolean merge = input.getMerge();
         
-        Download download = new Download(url, file_path, download_as_playlist, file_type, delete);
+        Download download = new Download(url, download_as_playlist, file_type, delete);
         
         download.download();
         download.convert();

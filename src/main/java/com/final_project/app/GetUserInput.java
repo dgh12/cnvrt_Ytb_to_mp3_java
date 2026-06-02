@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class GetUserInput {
     private String url;
     private Boolean download_as_playlist;
-    private String file_path;
     private String file_type;
     private Boolean delete = true;
     private boolean merge;
@@ -34,12 +33,6 @@ public class GetUserInput {
     }
     public Boolean getDownload_as_playlist() {
         return download_as_playlist;
-    }
-    public void setFile_path(String file_path) {
-        this.file_path = file_path;
-    }
-    public String getFile_path() {
-        return file_path;
     }
     public void setFile_type(String file_type) {
         this.file_type = file_type;
@@ -70,7 +63,6 @@ public class GetUserInput {
             download_as_playlist = "N";
         }
         this.setDownload_as_playlist(download_as_playlist.toLowerCase().equals("y"));
-        this.setFile_path("./");
         if (this.getDownload_as_playlist()) {
             System.out.print("Do you want to merge the playlist videos into one: [Y/n]");
             String merge = input.nextLine();

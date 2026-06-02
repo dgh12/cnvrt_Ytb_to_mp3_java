@@ -25,14 +25,13 @@ public class Download {
     private String url;
     private String file_path;
     private AudioCodec codec_type;
-    private String file_type;
     private boolean download_as_playlist;
     private boolean test = false;
     private boolean delete = false;
     private String title;
     private ArrayList<String> files = new ArrayList<>();
     
-    public Download (String url, String file_path,
+    public Download (String url,
         boolean download_as_playlist, String file_type, boolean delete) {
             this.url = url;
             this.file_path = file_path;
@@ -42,7 +41,7 @@ public class Download {
             this.delete = delete;
         }
     
-    public Download (String url, String file_path,
+    public Download (String url,
                     String file_type, boolean download_as_playlist, boolean test) {
             this.url = url;
             this.file_path = file_path;
@@ -68,7 +67,7 @@ public class Download {
         file_types.put("pcm_s16le", AudioCodec.PCM_S16LE);//wav
         file_types.put("pcm_u8", AudioCodec.PCM_S16LE);//wav
         for (var key : file_types.keySet()) {
-            if (key.equals(file_types)) {
+            if (key.equals(this.file_type)) {
                 return file_types.get(key);
             }
         }
@@ -95,7 +94,7 @@ public class Download {
             Youtube yt = new Youtube(this.url);
             String file_name = sanitize(yt.getTitle());
             System.out.println(file_name);
-            yt.streams().getOnlyAudio().download(this.file_path, file_name);
+            yt.streams().getOnlyAudio().download(file_name);
             System.out.println();
             this.files.add(file_name);
             return true;
@@ -190,7 +189,8 @@ public class Download {
             merge_files.add("file '" + file + "." + this.file_type + "'");
         }
         try {
-            Files.write(merge_file.toPath(), merge_files, StandardOpenOption.CREATE);
+            Files.write(merge_file.toPath(), merge_files, StandardOpenOption.CREATE,
+                        StandardOpenOption.TRUNCATE_EXISTING);
             String[] cmd = {
                 FFmpegBinary.getFfmpeg().getAbsolutePath(),
                 "-y",

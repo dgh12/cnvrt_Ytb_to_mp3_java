@@ -1,5 +1,6 @@
 package com.final_project.app;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -17,7 +18,7 @@ public class AppTest {
     @Test
     public void test_download() {
         Download download = new Download("https://www.youtube.com/watch?v=jHZrrV5m6dI", 
-                                        "./", "mp3", false, true);
+                                         "mp3", false, true);
         assertTrue(download.download());
     }
 
@@ -39,13 +40,13 @@ public class AppTest {
                 str += "a";
             }
         }
-        (str.equals(strt));
+        assertEquals(str, strt);
     }
 
     @Test
     public void test_playlist() {
         Download download = new Download("https://www.youtube.com/watch?v=MRKy3kX8XUM&list=PLecKPCyj4yRP8P_v2XXxP85CGaXxs4LWw",
-                                        "./", "mp3", true, true);
+                                         "mp3", true, true);
         if (download.download() &&
                download.convert() &&
                download.merge()) {
