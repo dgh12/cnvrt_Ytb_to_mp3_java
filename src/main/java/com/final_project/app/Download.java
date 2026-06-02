@@ -26,7 +26,6 @@ public class Download {
     private String file_type;
     private AudioCodec codec_type;
     private boolean download_as_playlist;
-    private boolean test = false;
     private boolean delete;
     private String title;
     private ArrayList<String> files = new ArrayList<>();
@@ -46,7 +45,6 @@ public class Download {
             this.download_as_playlist = download_as_playlist;
             this.codec_type = translate_codec_type(file_type);
             this.file_type = translate_file_type(file_type);
-            this.test = test;
         }
     
     public Download (String url, String file_type, String file, boolean test) {
@@ -54,7 +52,6 @@ public class Download {
         this.files.add(file);
         this.file_type = translate_file_type(file_type);
         this.codec_type = translate_codec_type(file_type);  
-        this.test = test;
     }
         
     private AudioCodec translate_codec_type(String file_type) {
@@ -142,11 +139,9 @@ public class Download {
                 System.out.println(" Size: " + String.format("%.2f MB", result.fileSizeMB()));
                 System.out.println(" Duration: " + result.timeTakenMillis() + "ms");
 
-                if (!this.test) {
-                    File to_delete = new File(file + ".mp4");
-                    Files.deleteIfExists(to_delete.toPath());
-                }
-
+                File to_delete = new File(file + ".mp4");
+                Files.deleteIfExists(to_delete.toPath());
+                
                 System.out.println(" Deleted original file.");
             }
             return true;
@@ -215,7 +210,7 @@ public class Download {
 
             if (exitCode == 0) {
                 System.out.println("added file");
-                if ((!this.test) || this.delete) {
+                if (this.delete) {
                     for (String file : files) {
                         File to_delete = new File(file + "." + this.file_type);
                         Files.delete(to_delete.toPath());
