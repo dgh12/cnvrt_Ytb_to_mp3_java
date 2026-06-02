@@ -139,8 +139,10 @@ public class Download {
                 System.out.println(" Size: " + String.format("%.2f MB", result.fileSizeMB()));
                 System.out.println(" Duration: " + result.timeTakenMillis() + "ms");
 
-                File to_delete = new File(file + ".mp4");
-                Files.deleteIfExists(to_delete.toPath());
+                if (this.check_for_corruption()) {
+                    File to_delete = new File(file + ".mp4");
+                    Files.deleteIfExists(to_delete.toPath());
+                }
                 
                 System.out.println(" Deleted original file.");
             }
