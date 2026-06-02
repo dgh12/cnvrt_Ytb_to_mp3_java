@@ -139,7 +139,7 @@ public class Download {
                 System.out.println(" Size: " + String.format("%.2f MB", result.fileSizeMB()));
                 System.out.println(" Duration: " + result.timeTakenMillis() + "ms");
 
-                if (this.check_for_corruption()) {
+                if (this.check_for_corruption(file)) {
                     File to_delete = new File(file + ".mp4");
                     Files.deleteIfExists(to_delete.toPath());
                 }
@@ -169,6 +169,28 @@ public class Download {
                 if (exitCode != 0) {
                     return false;
                 }
+            }
+        } catch (Exception e){
+            System.err.println(e);
+            return false;
+        }
+    return true;
+    }
+
+    public boolean check_for_corruption(String file) {
+        try {
+            String[] cmd = {
+                FFmpegBinary.getFfprobe().getAbsolutePath(),
+                "-v", "error",
+                file + "." + this.file_type,
+            };
+            
+            ProcessBuilder FFprobe_build =  new ProcessBuilder(cmd);
+            FFprobe_build.inheritIO();
+            Process FFprobe_process = FFprobe_build.start();
+            int exitCode = FFprobe_process.waitFor();
+            if (exitCode != 0) {
+                return false;
             }
         } catch (Exception e){
             System.err.println(e);
