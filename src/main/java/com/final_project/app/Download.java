@@ -19,17 +19,21 @@ import io.github.kinsleykajiva.ffmpeg.FFmpeg;
 import io.github.kinsleykajiva.ffmpeg.FFmpegBinary;
 import io.github.kinsleykajiva.ffmpeg.model.AudioCodec;
 import io.github.kinsleykajiva.ffmpeg.model.EncodingResult;
-import io.github.kinsleykajiva.ffmpeg.model.SampleRate;;
+import io.github.kinsleykajiva.ffmpeg.model.SampleRate;
+
 
 public class Download {
+    // innitiate variables
     private String url;
     private String file_type;
     private AudioCodec codec_type;
     private boolean download_as_playlist;
     private boolean delete;
+    private boolean test = true;
     private String title;
     private ArrayList<String> files = new ArrayList<>();
     
+    // constructors
     public Download (String url,
         boolean download_as_playlist, String file_type, boolean delete) {
             this.url = url;
@@ -37,6 +41,7 @@ public class Download {
             this.codec_type = translate_codec_type(file_type);
             this.file_type = translate_file_type(file_type);
             this.delete = delete;
+            this.test = false;
         }
     
     public Download (String url,
@@ -53,8 +58,11 @@ public class Download {
         this.file_type = translate_file_type(file_type);
         this.codec_type = translate_codec_type(file_type);  
     }
-        
+    
+    // methods
+    // utitlty method to tranlate file type to codec type for ffmpeg
     private AudioCodec translate_codec_type(String file_type) {
+        // HashMap to translate file types to codec types for ffmpeg
         HashMap<String, AudioCodec> file_types = new HashMap<>();
         file_types.put("mp3", AudioCodec.LIBMP3LAME);//mp3
         file_types.put("m4a", AudioCodec.AAC);//acc
@@ -69,64 +77,84 @@ public class Download {
         return file_types.get("mp3");
     }
 
+    // utility method to translate file type to file extension for ffmpeg
     private String translate_file_type(String file_type) {
+        // if the file type is pcm_s16le or pcm_u8, the output file type should be wav
         if (file_type.equals("pcm_s16le") || file_type.equals("pcm_u8")) {
             return "wav";
         }
+        //otherwise the output file type is the same as the provided file type
         return file_type;
     }
     
+    // method to streamline the download process
     public boolean download() throws JSONException{
+        // if the user decided to download as a playlist...
         if (download_as_playlist) {
+            // download as a playlist
             return download_playlist();
         } else {
-            return download_url();
+            // otherwise, download as a single url
+            return download_url(this.url);
         }
     }
     
-    private boolean download_url() {
+    // method to download a single URL
+    private boolean download_url(String url) {
+        // try to download the url except...
         try  {
-            Youtube yt = new Youtube(this.url);
+            // initialize downloader object
+            Youtube yt = new Youtube(url);
+            // get its file name and sanitize it to remove any characters that may cause issues with ffmpeg
             String file_name = sanitize(yt.getTitle());
             System.out.println(file_name);
+            // download the file and add it to the list of downloaded files
             yt.streams().getOnlyAudio().download("./", file_name);
             System.out.println();
             this.files.add(file_name);
             return true;
+        // if there is an error, print the error and return false
         } catch (Exception e) {
             System.err.println(e);
             return false;
         }
     }
 
+    // method to download a playlist
     private boolean download_playlist() throws JSONException{
+        // try to download the playlist except...
         try {
+            // extract the playlist videos
             Playlist playlist = new Playlist(this.url);
+            // get the playlist title and sanitize it to remove any characters that may cause issues with ffmpeg
             this.title = sanitize(playlist.getTitle());
+            // for each video in the playlist, download the video and add it to the list of downloaded files
             for (String url : playlist.getVideos()) {
-                Youtube yt = new Youtube(url);
-                String file_name = sanitize(yt.getTitle());
-                System.out.println(file_name);
-                yt.streams().getOnlyAudio().download("./", file_name);
-                this.files.add(file_name);
-                System.out.println("\n");
+                this.download_url(url);
             }
             return true;
+        // if there is an error, print the error and return false
         } catch (Exception e) {
             System.err.println(e);
             return false;
         }
     }
 
+    // method to sanitize file names to remove any characters that may cause issues with ffmpeg
     private String sanitize(String filename) {
         String nfilename = Normalizer.normalize(filename, Normalizer.Form.NFC);
+        // replace any characters that may cause issues with ffmpeg with a space and replace dashes with spaces to avoid issues with ffmpeg
         return nfilename.replaceAll("[\"'#$%*,.:;<>?\\\\^|~/]", " ").replace("-", " ");
     }
 
+    // method to convert the downloaded files to the desired file type
     public boolean convert() {
+        // try to convert the files except...
         try {
+            // for each file, convert the file to the desired file type using ffmpeg and the ffmpeg wrapper library
             for (String file : this.files) {
                 System.out.println("Converting '" + file + ".mp4' to '" + file + "." + file_type + "'");
+                // use the ffmpeg wrapper library to convert the file to the desired file type with the desired codec, bitrate, and sample rate
                 CompletableFuture<EncodingResult> future = FFmpeg.input(file + ".mp4")
                 .output(file + "." + this.file_type)
                 .withCodec(this.codec_type)
@@ -139,7 +167,8 @@ public class Download {
                 System.out.println(" Size: " + String.format("%.2f MB", result.fileSizeMB()));
                 System.out.println(" Duration: " + result.timeTakenMillis() + "ms");
 
-                if (this.check_for_corruption(file)) {
+                // if it is not a test and the file is not corrupted, delete the original file
+                if (this.check_for_corruption(file) && !this.test) {
                     File to_delete = new File(file + ".mp4");
                     Files.deleteIfExists(to_delete.toPath());
                 }
@@ -147,67 +176,88 @@ public class Download {
                 System.out.println(" Deleted original file.");
             }
             return true;
+        // if there is an error, print the error and return false
         } catch (Exception e) {
             System.err.println(e);
             return false;
         }
     }
 
+    // method to check for file(s) corruption using ffprobe
     public boolean check_for_corruption() {
+        // try to check the files except...
         try {
             for (String file : this.files) {
+                // set up the command to run ffprobe on the file to check for corruption
                 String[] cmd = {
                     FFmpegBinary.getFfprobe().getAbsolutePath(),
                     "-v", "error",
                     file + "." + this.file_type,
                 };
                 
+                // run the command
                 ProcessBuilder FFprobe_build =  new ProcessBuilder(cmd);
                 FFprobe_build.inheritIO();
                 Process FFprobe_process = FFprobe_build.start();
                 int exitCode = FFprobe_process.waitFor();
+                //check the exit code to determine if the file is corrupted or not
                 if (exitCode != 0) {
                     return false;
                 }
             }
+        // if there is an error, print the error and return false
         } catch (Exception e){
             System.err.println(e);
             return false;
         }
+    // if all of the files are not corrupted, return true
     return true;
     }
 
+    // method to check for file corruption using ffprobe for a single file
     public boolean check_for_corruption(String file) {
+        // try to check the files except...
         try {
+            // set up the command to run ffprobe on the file to check for corruption
             String[] cmd = {
                 FFmpegBinary.getFfprobe().getAbsolutePath(),
                 "-v", "error",
                 file + "." + this.file_type,
             };
             
+            // run the command
             ProcessBuilder FFprobe_build =  new ProcessBuilder(cmd);
             FFprobe_build.inheritIO();
             Process FFprobe_process = FFprobe_build.start();
             int exitCode = FFprobe_process.waitFor();
+            //check the exit code to determine if the file is corrupted or not
             if (exitCode != 0) {
                 return false;
             }
+        // if there is an error, print the error and return false
         } catch (Exception e){
             System.err.println(e);
             return false;
         }
+    // if all of the files are not corrupted, return true
     return true;
     }
     
+    // method to merge files if the download was a playlist
     public boolean merge() {
+        // file to hold the list of files to merge for ffmpeg
         File merge_file = new File("merge.txt");
+        // set up the list of files to merge for ffmpeg in the format required by ffmpeg (file 'filename')
         ArrayList<String> merge_files = new ArrayList<>();
         for (String file : this.files) {
             merge_files.add("file '" + file + "." + this.file_type + "'");
         }
+        // try to merge the files except...
         try {
+            // write the list of files to merge to the merge file
             Files.write(merge_file.toPath(), merge_files, StandardOpenOption.CREATE,
                         StandardOpenOption.TRUNCATE_EXISTING);
+            // set up the command to run ffmpeg to merge the files
             String[] cmd = {
                 FFmpegBinary.getFfmpeg().getAbsolutePath(),
                 "-y",
@@ -218,33 +268,30 @@ public class Download {
                 "-c", "copy",
                 this.title + "." + this.file_type,
             };
+            // run the command
             ProcessBuilder FFmpeg_build = new ProcessBuilder(cmd);
-            FFmpeg_build.redirectErrorStream(true);
+            FFmpeg_build.inheritIO();
             Process FFmpeg_process = FFmpeg_build.start();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(FFmpeg_process.getInputStream()));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-            FFmpeg_process.getInputStream().close();
-            FFmpeg_process.getErrorStream().close();
             int exitCode = FFmpeg_process.waitFor();
-            System.out.println("waited");
-            System.out.println(exitCode);
-
+            // check the exit code to determine if the merge was successful or not
             if (exitCode == 0) {
-                System.out.println("added file");
+                System.out.println(" Merged files\n");
+                // if the user wanted to delete the individual files, delete the individual files and the merge.txt file
                 if (this.delete) {
                     for (String file : files) {
                         File to_delete = new File(file + "." + this.file_type);
                         Files.delete(to_delete.toPath());
+                        File merge = new File("merge.txt");
+                        Files.deleteIfExists(merge.toPath());
                     }
                 }
                 return true;
+            // if the merge was not successful, print an error message and return false
             } else {
                 System.err.println("FFmpeg exited with an error code of: " + exitCode);
                 return false; 
             }
+        // if there is an error, print the error and return false
         } catch (Exception e) {
             System.err.println(e);
             return false;
