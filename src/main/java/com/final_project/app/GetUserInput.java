@@ -17,7 +17,6 @@ public class GetUserInput {
     public GetUserInput(String url, String file_path,
                         Boolean download_as_playlist, String file_type) {
         setDownload_as_playlist(download_as_playlist);
-        setFile_path(file_path);
         setUrl(url);
         setFile_type(file_type);
     }

@@ -23,7 +23,7 @@ import io.github.kinsleykajiva.ffmpeg.model.SampleRate;;
 
 public class Download {
     private String url;
-    private String file_path;
+    private String file_type;
     private AudioCodec codec_type;
     private boolean download_as_playlist;
     private boolean test = false;
@@ -34,9 +34,8 @@ public class Download {
     public Download (String url,
         boolean download_as_playlist, String file_type, boolean delete) {
             this.url = url;
-            this.file_path = file_path;
             this.download_as_playlist = download_as_playlist;
-            this.codec_type = translate_codac_type(file_type);
+            this.codec_type = translate_codec_type(file_type);
             this.file_type = translate_file_type(file_type);
             this.delete = delete;
         }
@@ -44,9 +43,8 @@ public class Download {
     public Download (String url,
                     String file_type, boolean download_as_playlist, boolean test) {
             this.url = url;
-            this.file_path = file_path;
             this.download_as_playlist = download_as_playlist;
-            this.codec_type = translate_codac_type(file_type);
+            this.codec_type = translate_codec_type(file_type);
             this.file_type = translate_file_type(file_type);
             this.test = test;
         }
@@ -55,11 +53,11 @@ public class Download {
         this.url = url;
         this.files.add(file);
         this.file_type = translate_file_type(file_type);
-        this.codec_type = translate_codac_type(file_type);  
+        this.codec_type = translate_codec_type(file_type);  
         this.test = test;
     }
         
-    private AudioCodec translate_codac_type(String file_type) {
+    private AudioCodec translate_codec_type(String file_type) {
         HashMap<String, AudioCodec> file_types = new HashMap<>();
         file_types.put("mp3", AudioCodec.LIBMP3LAME);//mp3
         file_types.put("m4a", AudioCodec.AAC);//acc
@@ -67,7 +65,7 @@ public class Download {
         file_types.put("pcm_s16le", AudioCodec.PCM_S16LE);//wav
         file_types.put("pcm_u8", AudioCodec.PCM_S16LE);//wav
         for (var key : file_types.keySet()) {
-            if (key.equals(this.file_type)) {
+            if (key.equals(file_type)) {
                 return file_types.get(key);
             }
         }
@@ -112,7 +110,7 @@ public class Download {
                 Youtube yt = new Youtube(url);
                 String file_name = sanitize(yt.getTitle());
                 System.out.println(file_name);
-                yt.streams().getOnlyAudio().download(this.file_path, file_name);
+                yt.streams().getOnlyAudio().download(file_name);
                 this.files.add(file_name);
                 System.out.println("\n");
             }
