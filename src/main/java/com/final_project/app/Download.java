@@ -215,7 +215,7 @@ public class Download {
 
             if (exitCode == 0) {
                 System.out.println("added file");
-                if (!this.test || this.delete) {
+                if ((!this.test) || this.delete) {
                     for (String file : files) {
                         File to_delete = new File(file + "." + this.file_type);
                         Files.delete(to_delete.toPath());
